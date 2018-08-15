@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_signed_in!
-    render json: 'You are not signed in' unless signed_in?
+    render json: ['You are not signed in'] unless signed_in?
   end
 end

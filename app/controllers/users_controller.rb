@@ -1,17 +1,12 @@
 class UsersController < ApplicationController
   def create
-    user = User.new(user_params)
+    user = User.new(username: params[:username], password: params[:password])
 
     if user.save
       sign_in(user)
-      render json: user
+      render json: [user.session_token]
     else
-      render json: 'User did not save'
+      render json: ['User did not save. Usernames must be unique and passwords must be 2 or more characters']
     end
-  end
-
-  private
-  def user_params
-    params.require(:user).permit(:password, :username)
   end
 end

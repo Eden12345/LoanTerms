@@ -11,8 +11,8 @@ class Property < ApplicationRecord
     foreign_key: :property_id,
     primary_key: :id
 
-  has_many :units,
-    class_name: 'Unit',
+  has_many :expenses,
+    class_name: 'Expense',
     foreign_key: :property_id,
     primary_key: :id
 end
