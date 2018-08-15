@@ -70,11 +70,13 @@ class PropertiesController < ApplicationController
 
     total_expenses = 0
     property.expenses.each do |expense|
-      total_expenses += unit.amount
+      total_expenses += expense.amount
     end
 
-    noi = total_annual_rent_collected - total_expenses
+    # The first part of the debt_rate equation is the 10 year Treasury
+    # note yield curve as of August 14th, 2018
     debt_rate = 0.0289 + 0.02
+    noi = total_annual_rent_collected - total_expenses
     minimum_debt_service = noi * 1.25
     property_value = noi / property.cap_rate
 
