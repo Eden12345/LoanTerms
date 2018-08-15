@@ -123,6 +123,8 @@ class PropertiesController < ApplicationController
     minimum_debt_service = noi * 1.25
     property_value = noi / property.cap_rate
 
+    # I'm pretty confused about how these are calculated in the instructions,
+    # because it looks like LTV will always be much higher
     dscr = (noi / minimum_debt_service) / debt_rate
     ltv = property_value * 0.8
 
@@ -130,7 +132,7 @@ class PropertiesController < ApplicationController
 
     return {
       "Address": property.address,
-      "Loan Amount": loan_amount,
+      "Loan Amount": loan_amount.to_i,
       "Debt Rate": debt_rate,
       "id": property.id,
     }

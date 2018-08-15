@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180815010608) do
+ActiveRecord::Schema.define(version: 20180815110918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
-    t.integer "amount", null: false
+    t.decimal "amount", null: false
     t.string "expense_type"
     t.integer "property_id", null: false
     t.datetime "created_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180815010608) do
 
   create_table "properties", force: :cascade do |t|
     t.string "address", null: false
-    t.integer "cap_rate", null: false
+    t.decimal "cap_rate", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20180815010608) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.integer "monthly_rent", null: false
+    t.decimal "monthly_rent", null: false
     t.boolean "vacancy", default: false
-    t.integer "annual_rent", null: false
+    t.decimal "annual_rent", null: false
     t.integer "unit_number"
     t.integer "bedrooms"
     t.integer "bathrooms"
