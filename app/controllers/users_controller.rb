@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
     if user.save
       sign_in(user)
-      render json: [user.session_token]
+      render json: ['You are now signed in']
     else
-      render json: ['User did not save. Usernames must be unique and passwords must be 2 or more characters']
+      render json: ['Usernames must be unique and passwords must be 2 or more characters']
     end
   end
 end

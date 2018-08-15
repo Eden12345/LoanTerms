@@ -1,13 +1,10 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by_credentials(
-      params[:username],
-      params[:password]
-    )
+    user = User.find_by_credentials(params[:username], params[:password])
 
     if user
       sign_in(user)
-      render json: [user.session_token]
+      render json: ['You are now signed in']
     else
       render json: ['Invalid username or password']
     end

@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
-  def require_signed_in!
+  def authenticate!
     render json: ['You are not signed in'] unless signed_in?
   end
 end
