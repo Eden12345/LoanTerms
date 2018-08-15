@@ -1,7 +1,7 @@
 # Instructions For My Loan Terms API Challenge Submission
 
 ## API URL
-https://afternoon-forest-31057.herokuapp.com/
+https://afternoon-forest-31057.herokuapp.com/  
 Deployed on Heroku with a PostgreSQL database
 
 ## Routes
