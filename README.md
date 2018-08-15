@@ -1,10 +1,10 @@
-#Instructions For Loan Terms Challenge Submission
+# Instructions For My Loan Terms API Challenge Submission
 
-##API URL
+## API URL
 https://afternoon-forest-31057.herokuapp.com/
 Deployed on Heroku with a PostgreSQL database
 
-##Routes
+## Routes
 ```
 POST /users (create a user)
 POST /session (sign in)
@@ -17,7 +17,7 @@ PATCH /quotes/:id (update a specific quote, if you created it)
 DELETE /quotes/:id (delete a specific quote, if you created it)
 ```
 
-##Notes
+## Notes
 * You must be signed into an account in order to create quotes (the project will save your session to your cookies)
 * You also must be signed into the appropriate account to view, update, or delete your properties
 * address and cap_rate are required attributes for Properties (i.e. quotes)
@@ -30,9 +30,9 @@ DELETE /quotes/:id (delete a specific quote, if you created it)
 * You need a “package” key for bulk requests
 * When returning quotes, I also included their addresses and IDs for testing purposes
 
-##Input Examples
+## Input Examples
 
-###User object structure
+### User object structure
 ```
 {
 	"username": "ethan",
@@ -40,7 +40,7 @@ DELETE /quotes/:id (delete a specific quote, if you created it)
 }
 ```
 
-###Quote object structure
+### Quote object structure
 ```
 {
 	"address": "555 Tulip Lane",
@@ -75,7 +75,7 @@ DELETE /quotes/:id (delete a specific quote, if you created it)
 }
 ```
 
-###Bulk quote object structure
+### Bulk quote object structure
 ```
 {
 	"package": [
