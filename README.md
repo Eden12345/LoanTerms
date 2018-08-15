@@ -1,6 +1,11 @@
-API URL: https://afternoon-forest-31057.herokuapp.com/
+#Instructions For Loan Terms Challenge Submission
 
-Routes:
+##API URL
+https://afternoon-forest-31057.herokuapp.com/
+Deployed on Heroku with a PostgreSQL database
+
+##Routes
+```
 POST /users (create a user)
 POST /session (sign in)
 DELETE /session (sign out)
@@ -10,29 +15,33 @@ POST /quotes/bulk (create a batch of quotes)
 GET /quotes/:id (view a specific quote, if you created it)
 PATCH /quotes/:id (update a specific quote, if you created it)
 DELETE /quotes/:id (delete a specific quote, if you created it)
+```
 
-Notes:
-- You must be signed into an account in order to create quotes (the project will save your session to your cookies)
-- You also must be signed into the appropriate account to view, update, or delete your properties
-- address and cap_rate are required attributes for Properties (i.e. quotes)
-- monthly_rent is the only required attribute for Units
-- amount is the only required attribute for Expenses
-- Expenses and Units must come in arrays
-- You must list at least one unit in your rent_roll when creating a new quote
-- Unit annual rent only counted if vacancy is false, which is the default
-- If you pass a rent_roll or expenses array in your JSON to PATCH, it will replace all of them
-- You need a “package” key for bulk requests
-- When returning quotes, I also included their addresses and IDs for testing purposes
+##Notes
+* You must be signed into an account in order to create quotes (the project will save your session to your cookies)
+* You also must be signed into the appropriate account to view, update, or delete your properties
+* address and cap_rate are required attributes for Properties (i.e. quotes)
+* monthly_rent is the only required attribute for Units
+* amount is the only required attribute for Expenses
+* Expenses and Units must come in arrays
+* You must list at least one unit in your rent_roll when creating a new quote
+* Unit annual rent only counted if vacancy is false, which is the default
+* If you pass a rent_roll or expenses array in your JSON to PATCH, it will replace all of them
+* You need a “package” key for bulk requests
+* When returning quotes, I also included their addresses and IDs for testing purposes
 
-***Input examples (JSON object structures)***
+##Input Examples
 
-User object structure:
+###User object structure
+```
 {
 	"username": "ethan",
 	"password": "pass"
 }
+```
 
-Quote object structure:
+###Quote object structure
+```
 {
 	"address": "555 Tulip Lane",
 	"cap_rate": 0.13,
@@ -64,8 +73,10 @@ Quote object structure:
 		}
 	]
 }
+```
 
-Bulk quote object structure:
+###Bulk quote object structure
+```
 {
 	"package": [
 		{
@@ -122,3 +133,4 @@ Bulk quote object structure:
 		}
 	]
 }
+```
