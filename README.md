@@ -1,4 +1,4 @@
-# Instructions For My Loan Terms API Challenge Submission
+# Instructions
 
 ## API URL
 https://afternoon-forest-31057.herokuapp.com/  
