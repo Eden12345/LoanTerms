@@ -101,10 +101,10 @@ class PropertiesController < ApplicationController
   private
   def calculate(property)
     # I'm calculating this here rather than saving it in the DB because
-    # the debt_rate depends on the 10 year Treasury note yield curve,
-    # if I understood the directions correctly -- I'd imagine we would want
-    # to set up an API call in this method to a service that tracks
-    # the yield curve, which would update the debt_rate calculation
+    # the debt_rate depends on the 10 year Treasury note yield curve --
+    # I'd imagine one would want to set up an API call in this method to
+    # a service that tracks the yield curve, which would update the
+    # debt_rate calculation
 
     total_annual_rent_collected = 0
     property.units.each do |unit|
@@ -123,7 +123,7 @@ class PropertiesController < ApplicationController
     minimum_debt_service = noi * 1.25
     property_value = noi / property.cap_rate
 
-    # I'm pretty confused about how these are calculated in the instructions,
+    # I'm pretty confused about how these formulas work,
     # because it looks like LTV will always be much higher
     dscr = (noi / minimum_debt_service) / debt_rate
     ltv = property_value * 0.8
